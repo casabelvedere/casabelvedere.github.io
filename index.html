@@ -744,6 +744,13 @@ em { font-style: italic; }
 }
 .photo.tall { min-height: 480px; }
 
+.photo-duo {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.6rem;
+}
+.photo-duo .photo { min-height: 280px; }
+
 	</style>
 </head>
 <body>
@@ -821,7 +828,7 @@ em { font-style: italic; }
 					<div class="photo" style="background-image:url('images/master.jpg')" role="img" aria-label="Primary bedroom with canopy bed and green throw"></div>
 					<figcaption>
 						<h3>Sleep</h3>
-						<p>Two primary suites, one at each end of the wing, each with its own ensuite bath and morning light through the olive canopy.</p>
+						<p>Two primary suites, one at each end of the wing, each with its own ensuite bath, sea views, and morning light through the olive canopy.</p>
 					</figcaption>
 				</figure>
 				<figure class="room">
@@ -836,6 +843,16 @@ em { font-style: italic; }
 					<figcaption>
 						<h3>The bathrooms</h3>
 						<p>Custom quartz, raw stone vessel sinks, and brass fittings &mdash; one opens through a full-height window straight onto the olive grove.</p>
+					</figcaption>
+				</figure>
+				<figure class="room">
+					<div class="photo-duo">
+						<div class="photo" style="background-image:url('images/bath-travertine-vanity.jpg')" role="img" aria-label="Travertine sink on a plaster vanity below a round mirror"></div>
+						<div class="photo" style="background-image:url('images/bath-travertine-shower.jpg')" role="img" aria-label="Walk-in shower washed in daylight from a window over the grove"></div>
+					</div>
+					<figcaption>
+						<h3>&hellip; and no two alike</h3>
+						<p>Travertine and warm plaster in one, grey stone and a beaded chandelier in another &mdash; each bath hand-finished with its own character.</p>
 					</figcaption>
 				</figure>
 				<figure class="room">
@@ -867,11 +884,11 @@ em { font-style: italic; }
 						<div class="spec"><span>Rooftop terrace</span><span class="v">~175 m&sup2;</span></div>
 						<div class="spec"><span>Olive grove</span><span class="v">~8,300 m&sup2;</span></div>
 						<div class="spec"><span>Private parking</span><span class="v">3&ndash;4 cars</span></div>
-						<div class="spec"><span>Sea views (rooftop)</span><span class="tick">&#10003;</span></div>
+						<div class="spec"><span>Sea views &mdash; living room, primaries, pool &amp; rooftop</span><span class="tick">&#10003;</span></div>
 					</div>
 					<div>
 						<div class="spec"><span>Air conditioning, every room</span><span class="tick">&#10003;</span></div>
-						<div class="spec"><span>Heating &middot; solar hot water</span><span class="tick">&#10003;</span></div>
+						<div class="spec"><span>Heating &amp; hot water (gas)</span><span class="tick">&#10003;</span></div>
 						<div class="spec"><span>Starlink high-speed Wi-Fi</span><span class="tick">&#10003;</span></div>
 						<div class="spec"><span>Dishwasher</span><span class="tick">&#10003;</span></div>
 						<div class="spec"><span>Wine fridge &middot; espresso machine</span><span class="tick">&#10003;</span></div>
