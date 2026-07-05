@@ -595,6 +595,84 @@ em { font-style: italic; }
 	color: var(--ink);
 }
 
+/* ---------- Spec table (at a glance) ---------- */
+
+.specs-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0 clamp(2.5rem, 6vw, 5rem);
+	margin-top: 2rem;
+}
+@media (max-width: 720px) {
+	.specs-grid { grid-template-columns: 1fr; }
+}
+.spec {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.55rem 0;
+	border-bottom: 1px solid var(--rule);
+	font-size: 0.95rem;
+	color: var(--ink-soft);
+}
+.spec .v {
+	font-family: var(--serif);
+	font-size: 1.05rem;
+	color: var(--ink);
+	white-space: nowrap;
+}
+.tick, .dash {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.35rem; height: 1.35rem;
+	border-radius: 50%;
+	font-size: 0.8rem;
+	line-height: 1;
+}
+.tick { background: var(--clay); color: var(--bg); }
+.dash { background: var(--bg-deep); color: var(--ink-muted); }
+.spec-legend {
+	margin-top: 1.2rem;
+	font-size: 0.82rem;
+	color: var(--ink-muted);
+	font-style: italic;
+}
+.spec-legend .tick, .spec-legend .dash { width: 1.1rem; height: 1.1rem; font-size: 0.65rem; margin: 0 0.25rem; vertical-align: middle; }
+
+/* ---------- Included / on request ---------- */
+
+.inc-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: clamp(1.5rem, 4vw, 3rem);
+	margin-top: 2rem;
+	text-align: left;
+}
+@media (max-width: 640px) { .inc-grid { grid-template-columns: 1fr; } }
+.inc-grid h4 {
+	font-family: var(--serif);
+	font-style: italic;
+	font-weight: 500;
+	font-size: 1.1rem;
+	color: var(--clay-deep);
+	margin: 0 0 0.6rem;
+	padding-bottom: 0.4rem;
+	border-bottom: 1px solid var(--rule);
+}
+.inc-grid ul { list-style: none; margin: 0; padding: 0; font-size: 0.92rem; color: var(--ink-soft); }
+.inc-grid li { padding: 0.3rem 0 0.3rem 1.7rem; position: relative; }
+.inc-grid li::before {
+	position: absolute; left: 0; top: 0.42rem;
+	width: 1.1rem; height: 1.1rem;
+	border-radius: 50%;
+	font-size: 0.62rem;
+	display: flex; align-items: center; justify-content: center;
+}
+.inc-grid .yes li::before { content: "\2713"; background: var(--clay); color: var(--bg); }
+.inc-grid .opt li::before { content: "\2013"; background: var(--bg-warm); color: var(--ink-muted); border: 1px solid var(--rule); }
+
 /* ---------- Floor plan ---------- */
 
 .lede .lede-en {
@@ -674,7 +752,7 @@ em { font-style: italic; }
 		<a href="#top" class="brand">Aria Adriatica</a>
 		<ul>
 			<li><a href="#story">The Story</a></li>
-			<li><a href="#house">The House</a></li>
+			<li><a href="#house">The Home</a></li>
 			<li><a href="#plan">The Plan</a></li>
 			<li><a href="#rooftop">The Rooftop</a></li>
 			<li><a href="#land">The Land</a></li>
@@ -702,69 +780,69 @@ em { font-style: italic; }
 			<p class="eyebrow">The Story</p>
 			<h2>The air that gives the house its name</h2>
 			<p class="lede">
-				Aria Adriatica sits in the Belvedere countryside outside Carovigno, on a gentle hill above the Adriatic. The sea is close enough to walk to in the morning. The house is set back among the olive groves, in the quiet.
+				Aria Adriatica sits in the Belvedere countryside outside Carovigno, on a gentle hill above the Adriatic. The sea is close enough to walk to in the morning. The house is set back among the century-old olive groves, in the quiet.
 			</p>
 			<p>
 				The name is a plain description: <em>aria adriatica</em>, the Adriatic air. It comes up from the water through the olive groves &mdash; salt at the edges, rosemary underneath &mdash; and it is why everyone ends up on the veranda.
 			</p>
 			<p>
-				They named this countryside <em>Belvedere</em> &mdash; the beautiful view &mdash; centuries ago. Climb to the rooftop terrace and you&rsquo;ll see no one was exaggerating.
+				They named this countryside <em>Belvedere</em> &mdash; the beautiful view &mdash; centuries ago. Climb to the rooftop terrace, and you&rsquo;ll see no one was exaggerating.
 			</p>
 		</div>
 	</section>
 
 	<section id="house" class="section house">
 		<div class="section-inner">
-			<p class="eyebrow">The House</p>
-			<h2>Quietly contemporary, sleeps eight</h2>
+			<p class="eyebrow">The Home</p>
+			<h2>Contemporary with a Mediterranean heartbeat</h2>
 			<p class="lede narrow">
-				A low whitewashed house in the architectural language of southern Puglia &mdash; cubic volumes, panoramic glazing, restrained lines &mdash; built to disappear into the olive grove. Fully renovated in <strong>2026</strong>.
+				Space for eight to slow down and stay awhile. A low whitewashed house in the architectural language of southern Puglia, built to disappear into the olive grove. Fully renovated in <strong>2026</strong>.
 			</p>
 			<p class="lede narrow">
-				<strong>4 bedrooms &middot; 3 bathrooms &middot; sleeps 8.</strong> Two ensuite masters at either end of the bedroom wing, two bedrooms sharing a third bath between them, and air-conditioning in every room.
+				<strong>4 bedrooms &middot; 3 bathrooms &middot; sleeps 8.</strong> Two primary en-suites at either end of the bedroom wing, two bedrooms sharing a third bath between them, and air-conditioning in every room.
 			</p>
 
 			<div class="rooms-grid">
 				<figure class="room">
 					<div class="photo" style="background-image:url('images/living.jpg')" role="img" aria-label="Living room with cream sectional, jute rug and microplaster walls"></div>
 					<figcaption>
-						<h3>Living &amp; dining</h3>
-						<p>~48 m&sup2; centred on a panoramic window over the pool, with glass that slides open onto the veranda.</p>
+						<h3>Live</h3>
+						<p>~48 m&sup2; of open-plan space centered around panoramic windows overlooking the pool and sea. The glass panels slide fully open, creating a seamless flow onto the veranda.</p>
 					</figcaption>
 				</figure>
 				<figure class="room">
 					<div class="photo" style="background-image:url('images/kitchen.jpg')" role="img" aria-label="Microplaster kitchen island with rattan high-top stools"></div>
 					<figcaption>
-						<h3>The kitchen</h3>
-						<p>Apulian microplaster and a built-in island where breakfast and aperitivi end up &mdash; fully equipped, from induction stove to wine fridge and espresso machine.</p>
+						<h3>Dine</h3>
+						<p>Apulian microplaster and a custom quartz island where breakfast and aperitivi end up &mdash; fully equipped, from induction stove to wine fridge and espresso machine.</p>
 					</figcaption>
 				</figure>
 				<figure class="room">
-					<div class="photo" style="background-image:url('images/master.jpg')" role="img" aria-label="Master bedroom with canopy bed and green throw"></div>
+					<div class="photo" style="background-image:url('images/master.jpg')" role="img" aria-label="Primary bedroom with canopy bed and green throw"></div>
 					<figcaption>
-						<h3>Master bedrooms (×2)</h3>
-						<p>One at each end of the wing, each with its own ensuite bath and morning light through the olive canopy.</p>
+						<h3>Sleep</h3>
+						<p>Two primary suites, one at each end of the wing, each with its own ensuite bath and morning light through the olive canopy.</p>
 					</figcaption>
 				</figure>
 				<figure class="room">
 					<div class="photo" style="background-image:url('images/bedrooms.jpg')" role="img" aria-label="Second bedroom with woven rattan headboard"></div>
 					<figcaption>
 						<h3>Bedrooms 2 &amp; 3</h3>
-						<p>Twin or double configurable, sharing a generous hall bathroom &mdash; ideal for friends, children, or a second family.</p>
+						<p>With direct outdoor access, sharing a generous hall bathroom &mdash; ideal for friends, children, or a second family.</p>
 					</figcaption>
 				</figure>
 				<figure class="room">
 					<div class="photo" style="background-image:url('images/bath.jpg')" role="img" aria-label="Bathroom with raw stone vessel sinks, brass taps and a window to the olive grove"></div>
 					<figcaption>
 						<h3>The bathrooms</h3>
-						<p>Microplaster, raw stone vessel sinks, brass fittings &mdash; one opens through a full-height window straight onto the olive grove.</p>
+						<p>Custom quartz, raw stone vessel sinks, and brass fittings &mdash; one opens through a full-height window straight onto the olive grove.</p>
 					</figcaption>
 				</figure>
 				<figure class="room">
 					<div class="photo" style="background-image:url('images/veranda.jpg')" role="img" aria-label="Covered veranda with outdoor dining table and rattan pendant lights"></div>
 					<figcaption>
 						<h3>The veranda</h3>
-						<p>A deep covered porch open to the pool &mdash; the real dining room from June through September.</p>
+						<p>A deep covered porch open to the pool &mdash; the real dining room from May through September.</p>
 					</figcaption>
 				</figure>
 				<figure class="room">
@@ -777,65 +855,34 @@ em { font-style: italic; }
 			</div>
 
 			<div class="comforts">
-				<p class="eyebrow center">Comodit&agrave; &middot; What&rsquo;s Inside</p>
-				<div class="comforts-grid">
+				<p class="eyebrow center">La Scheda &middot; At a Glance</p>
+				<div class="specs-grid">
 					<div>
-						<h4>Cucina &middot; Kitchen</h4>
-						<ul>
-							<li>Built-in island with high-top dining</li>
-							<li>Oven &amp; induction stove</li>
-							<li>Full-size refrigerator</li>
-							<li>Dishwasher</li>
-							<li>Wine fridge</li>
-							<li>Espresso machine</li>
-						</ul>
+						<div class="spec"><span>Sleeps</span><span class="v">8</span></div>
+						<div class="spec"><span>Bedrooms</span><span class="v">4</span></div>
+						<div class="spec"><span>&hellip; with direct outdoor access</span><span class="v">2</span></div>
+						<div class="spec"><span>Bathrooms</span><span class="v">3</span></div>
+						<div class="spec"><span>&hellip; of which ensuite</span><span class="v">2</span></div>
+						<div class="spec"><span>Salt-water pool</span><span class="v">~58 m&sup2;</span></div>
+						<div class="spec"><span>Rooftop terrace</span><span class="v">~175 m&sup2;</span></div>
+						<div class="spec"><span>Olive grove</span><span class="v">~8,300 m&sup2;</span></div>
+						<div class="spec"><span>Private parking</span><span class="v">3&ndash;4 cars</span></div>
+						<div class="spec"><span>Sea views (rooftop)</span><span class="tick">&#10003;</span></div>
 					</div>
 					<div>
-						<h4>Connettivit&agrave; &middot; Connectivity</h4>
-						<ul>
-							<li><strong>Starlink</strong> high-speed satellite internet</li>
-							<li>Wi-Fi throughout house &amp; pool area</li>
-							<li>Italian mobile reception</li>
-						</ul>
-					</div>
-					<div>
-						<h4>Clima &middot; Climate</h4>
-						<ul>
-							<li>Split A/C in living room &amp; kitchen</li>
-							<li>Individual A/C in every bedroom</li>
-							<li>LPG-fuelled radiator heating</li>
-							<li>Solar water heater</li>
-						</ul>
-					</div>
-					<div>
-						<h4>Sicurezza &middot; Security</h4>
-						<ul>
-							<li>Keyless entry</li>
-							<li>Alarm system (zoned + perimeter)</li>
-							<li>Video intercom at gate</li>
-						</ul>
-					</div>
-					<div>
-						<h4>Esterni &middot; Outdoors</h4>
-						<ul>
-							<li>Salt-water pool, ~58 m&sup2;</li>
-							<li>Rooftop terrace, ~175 m&sup2;</li>
-							<li>Covered veranda dining</li>
-							<li>Outdoor shower</li>
-							<li>Parking for 3&ndash;4 cars</li>
-						</ul>
-					</div>
-					<div>
-						<h4>Servizi &middot; Services</h4>
-						<ul>
-							<li>End-of-stay cleaning included</li>
-							<li>Mid-stay cleaning on request</li>
-							<li>Welcome basket on arrival</li>
-							<li>Private chef on request</li>
-							<li>Driver, boat, excursions on request</li>
-						</ul>
+						<div class="spec"><span>Air conditioning, every room</span><span class="tick">&#10003;</span></div>
+						<div class="spec"><span>Heating &middot; solar hot water</span><span class="tick">&#10003;</span></div>
+						<div class="spec"><span>Starlink high-speed Wi-Fi</span><span class="tick">&#10003;</span></div>
+						<div class="spec"><span>Dishwasher</span><span class="tick">&#10003;</span></div>
+						<div class="spec"><span>Wine fridge &middot; espresso machine</span><span class="tick">&#10003;</span></div>
+						<div class="spec"><span>Keyless entry &middot; alarm &middot; intercom at gate</span><span class="tick">&#10003;</span></div>
+						<div class="spec"><span>Outdoor shower</span><span class="tick">&#10003;</span></div>
+						<div class="spec"><span>Private chef</span><span class="dash">&ndash;</span></div>
+						<div class="spec"><span>Driver, boat, excursions</span><span class="dash">&ndash;</span></div>
+						<div class="spec"><span>Mid-stay cleaning</span><span class="dash">&ndash;</span></div>
 					</div>
 				</div>
+				<p class="spec-legend"><span class="tick">&#10003;</span> yes &middot; present &nbsp;&nbsp; <span class="dash">&ndash;</span> on request</p>
 			</div>
 
 		</div>
@@ -918,7 +965,7 @@ em { font-style: italic; }
     <text x="695" y="248" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#8e8770">Bedroom 2</text>
 
     <text x="885" y="226" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="19" fill="#3a3f2e">Camera Padronale</text>
-    <text x="885" y="245" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#8e8770">Master 1 &middot; nearest pool</text>
+    <text x="885" y="245" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#8e8770">Primary 1 &middot; nearest pool</text>
 
     <text x="1055" y="230" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="13" fill="#3a3f2e">Bagno</text>
     <text x="1055" y="246" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#8e8770">ensuite</text>
@@ -932,7 +979,7 @@ em { font-style: italic; }
     <line x1="355" y1="340" x2="355" y2="510" stroke="#8a6a4a" stroke-width="1.5"/>
     <text x="300" y="418" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="16" fill="#3a3f2e">Camera</text>
     <text x="300" y="437" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="16" fill="#3a3f2e">Padronale</text>
-    <text x="300" y="457" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#8e8770">Master 2 &middot; rear</text>
+    <text x="300" y="457" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#8e8770">Primary 2 &middot; rear</text>
     <text x="392" y="420" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-style="italic" font-size="12" fill="#3a3f2e">Bagno</text>
     <text x="392" y="436" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#8e8770">ensuite</text>
   </g>
@@ -1065,7 +1112,7 @@ em { font-style: italic; }
     <text x="200" y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#5a5a48">5 m</text>
   </g>
 </svg>
-				<figcaption>Aria Adriatica on four stepped levels &mdash; ground / pool platform / house / rooftop terrace. Schematic, not to surveyor scale. Master 1 sits nearest the pool and Master 2 at the back near the rear parking. The corridor opens onto the internal olive courtyard.</figcaption>
+				<figcaption>Aria Adriatica on four stepped levels &mdash; ground / pool platform / house / rooftop terrace. Schematic, not to surveyor scale. Primary 1 sits nearest the pool and Primary 2 at the back near the rear parking. The corridor opens onto the internal olive courtyard.</figcaption>
 			</figure>
 		</div>
 	</section>
@@ -1073,11 +1120,11 @@ em { font-style: italic; }
 	<section id="rooftop" class="section rooftop">
 		<div class="section-inner">
 			<p class="eyebrow">The Rooftop</p>
-			<h2>The bel vedere</h2>
+			<h2>The Bel Vedere</h2>
 			<div class="split">
 				<div class="split-text">
 					<p>
-						An external staircase climbs to a terrace covering nearly the whole footprint &mdash; about 175 m&sup2; of open-air living, a second floor that happens to have no walls. The view runs uninterrupted over the grove to the Adriatic: a thin blue line in the morning, gold at sunset. Long breakfasts, quiet aperitivi, storm-watching in shoulder season.
+						An external staircase climbs to a terrace that covers nearly the entire footprint &mdash; about 175 m&sup2; of open-air living, a second floor that happens to have no walls. The view runs uninterrupted over the grove to the Adriatic: a thin blue line in the morning, gold at sunset. Long breakfasts, quiet aperitivi, storm-watching in shoulder season.
 					</p>
 				</div>
 				<div class="split-image">
@@ -1100,7 +1147,7 @@ em { font-style: italic; }
 						Just over <strong>8,300 m&sup2; of olive grove</strong> &mdash; mature trees, some centuries old &mdash; laced with gravel paths, bordered by dry-stone walls, planted with bougainvillea, rosemary and lavender. The beach is a short drive; the protected coves of Torre Guaceto a few minutes north.
 					</p>
 					<p class="aside">
-						Two cats came with the place: <strong>Octavia</strong>, in her tuxedo, and <strong>Augustus</strong>. They were here before us and remain, as far as they are concerned, the rightful owners. They accept guests.
+						Two cats came with the place: <strong>Octavia</strong>, in her tuxedo, and <strong>Augustus</strong>, the true Emperor of the villa. They were here before us and remain, as far as they are concerned, the rightful owners. They accept guests.
 					</p>
 				</div>
 			</div>
@@ -1119,36 +1166,53 @@ em { font-style: italic; }
 				<li>
 					<span class="guide-num">01</span>
 					<div class="guide-text">
-						<h3>Morning &mdash; <span class="place">La Sfornata &middot; Panificio</span></h3>
-						<p class="meta">Carovigno &middot; bakery</p>
-						<p>Warm focaccia and pastries that never survive the drive home. Go early.</p>
+						<h3>Morning &mdash; <span class="place">Pasticceria Prodi dal 1985</span></h3>
+						<p class="meta">Carovigno &middot; pasticceria</p>
+						<p>Amazing pasticciotti, panettone, pandoro. In the summer, head to Torre Santa Sabina for breakfast by the sea at their pop-up, <em>Le Croissant</em>.</p>
 					</div>
 				</li>
 				<li>
 					<span class="guide-num">02</span>
 					<div class="guide-text">
-						<h3>Midday &mdash; <span class="place">Torre Guaceto</span></h3>
-						<p class="meta">Protected marine reserve &middot; a short drive</p>
-						<p>The beach we send everyone to. Take the little tram down through the macchia to white sand and water so clear you can count your toes. Bring a mask.</p>
+						<h3>Midday &mdash; <span class="place">La Sfornata &middot; Panificio</span></h3>
+						<p class="meta">Carovigno &middot; bakery</p>
+						<p>Warm focaccia and pastries that never make it home. Go early.</p>
 					</div>
 				</li>
 				<li>
 					<span class="guide-num">03</span>
 					<div class="guide-text">
-						<h3>Lunch &mdash; <span class="place">Casa Mia</span></h3>
-						<p class="meta">Carovigno &middot; a few minutes</p>
-						<p>Our table in Carovigno. Honest Pugliese cooking &mdash; book outside, and don&rsquo;t over-order.</p>
+						<h3><span class="place">Torre Guaceto</span></h3>
+						<p class="meta">Protected marine reserve &middot; a short drive</p>
+						<p>The beach we send everyone to. Take the little tram down through the macchia to white sand and water so clear you can count your toes. Bring a mask and your bounty from La Sfornata.</p>
 					</div>
 				</li>
 				<li>
 					<span class="guide-num">04</span>
+					<div class="guide-text">
+						<h3>Lunch &mdash; <span class="place">Casa Mia</span></h3>
+						<p class="meta">Carovigno &middot; a few minutes from the city center</p>
+						<p>Our table in Carovigno. Honest Pugliese cooking &mdash; book outside.</p>
+					</div>
+				</li>
+				<li>
+					<span class="guide-num">05</span>
 					<div class="guide-text">
 						<h3>Afternoon &mdash; <span class="place">Apulian Beach Club</span></h3>
 						<p class="meta">On the coast</p>
 						<p>The other kind of beach day: a lounger, a proper spritz, lunch under your umbrella. Reserve ahead in August.</p>
 					</div>
 				</li>
+				<li>
+					<span class="guide-num">06</span>
+					<div class="guide-text">
+						<h3>Aperitivo &mdash; <span class="place">The Bel Vedere</span></h3>
+						<p class="meta">Our rooftop</p>
+						<p>If you can pull yourself away from the sea, our favourite terrace is, of course, right upstairs. Ask us for the house spritz recipe &mdash; crafted to match the red-orange glow of the Adriatic sun as it dips for the day.</p>
+					</div>
+				</li>
 				<li class="guide-more">
+					<p><strong>Menzioni d&rsquo;onore</strong> &mdash; <span class="place">Togo Bay Beach Club</span> (Porto Cesareo), or anywhere on the Salento coastline &middot; <span class="place">Zipa Cafe</span> (Matera): order a G&amp;T as Matera comes to life at dusk &middot; <span class="place">Castle Elvira</span> (Trepuzzi): 360&deg; views of the Salento countryside from the rooftop tower &mdash; stay for the spaghetti with sun-dried tomato pesto.</p>
 					<p>&mdash; and more with every season.</p>
 				</li>
 			</ol>
@@ -1183,8 +1247,28 @@ em { font-style: italic; }
 					<tr><td>Peak</td><td>August</td><td>&euro;8,000</td></tr>
 				</tbody>
 			</table>
+			<div class="inc-grid">
+				<div class="yes">
+					<h4>Nel Prezzo &middot; Included</h4>
+					<ul>
+						<li>Bed linens, bath &amp; pool towels</li>
+						<li>End-of-stay cleaning</li>
+						<li>Welcome basket on arrival</li>
+						<li>Wi-Fi (Starlink) &amp; all utilities, A/C included</li>
+						<li>Tourist tax &mdash; we take care of it</li>
+					</ul>
+				</div>
+				<div class="opt">
+					<h4>Su Richiesta &middot; On Request</h4>
+					<ul>
+						<li>Mid-stay cleaning &amp; linen change</li>
+						<li>Private chef &mdash; dinners &amp; long lunches</li>
+						<li>Driver, boat days, excursions</li>
+					</ul>
+				</div>
+			</div>
 			<p class="footnote">
-				Minimum 7 nights (Saturday to Saturday) June&ndash;September; shorter stays off-season by arrangement. Rates include linens, cleaning, welcome basket, Wi-Fi and all utilities. Refundable deposit at booking. Write for dates &mdash; August fills first.
+				Minimum 7 nights (Saturday to Saturday) June&ndash;September; shorter stays off-season by arrangement. Refundable deposit at booking. Write for dates &mdash; August fills first.
 			</p>
 		</div>
 	</section>
@@ -1194,7 +1278,7 @@ em { font-style: italic; }
 			<p class="eyebrow">Contact</p>
 			<h2>Write to us directly</h2>
 			<p>
-				We answer every email ourselves. Tell us when you&rsquo;d like to come, who is travelling, and anything we can arrange &mdash; a chef, a boat, a long table for a birthday.
+				We answer every email ourselves. Tell us when you&rsquo;d like to come, who is traveling, and anything we can arrange &mdash; a chef, a boat, a long table for a birthday.
 			</p>
 			<p class="contact-links">
 				<a class="contact-btn" href="mailto:hello@ariaadriatica.com">hello@ariaadriatica.com</a>
@@ -1206,7 +1290,7 @@ em { font-style: italic; }
 	<section id="newsletter" class="section newsletter">
 		<div class="section-inner narrow center">
 			<p class="eyebrow">Restiamo in Contatto &middot; Keep in Touch</p>
-			<h2>A few letters a year, from the grove</h2>
+			<h2>A few letters a year, from the beach</h2>
 			<p>
 				A short letter a few times a year &mdash; a new restaurant, the first day of the olive harvest, a photo from the rooftop in November, last-minute openings. No spam, no pressure.
 			</p>
@@ -1232,7 +1316,7 @@ em { font-style: italic; }
 		<div class="footer-inner">
 			<p class="brand">Aria Adriatica</p>
 			<p class="address">Contrada Belvedere &middot; Carovigno (BR) &middot; Puglia</p>
-			<p class="fineprint">&copy; Aria Adriatica &middot; All rights reserved</p>
+			<p class="fineprint">CIN: in fase di rilascio &middot; &copy; Aria Adriatica &middot; All rights reserved</p>
 		</div>
 	</footer>
 
