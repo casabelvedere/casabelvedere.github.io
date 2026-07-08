@@ -673,6 +673,32 @@ em { font-style: italic; }
 .inc-grid .yes li::before { content: "\2713"; background: var(--clay); color: var(--bg); }
 .inc-grid .opt li::before { content: "\2013"; background: var(--bg-warm); color: var(--ink-muted); border: 1px solid var(--rule); }
 
+/* ---------- Gallery ---------- */
+
+.gallery-grid {
+	columns: 3 280px;
+	column-gap: 0.8rem;
+	margin-top: 2.5rem;
+}
+.gallery-grid figure {
+	margin: 0 0 0.8rem;
+	break-inside: avoid;
+}
+.gallery-grid img {
+	width: 100%;
+	display: block;
+	border: 1px solid var(--rule);
+	background: var(--bg-deep);
+	min-height: 120px;
+}
+.gallery-grid figcaption {
+	font-family: var(--serif);
+	font-style: italic;
+	font-size: 0.85rem;
+	color: var(--ink-muted);
+	padding: 0.35rem 0.2rem 0;
+}
+
 /* ---------- Floor plan ---------- */
 
 .lede .lede-en {
@@ -744,12 +770,6 @@ em { font-style: italic; }
 }
 .photo.tall { min-height: 480px; }
 
-.photo-duo {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 0.6rem;
-}
-.photo-duo .photo { min-height: 280px; }
 
 	</style>
 </head>
@@ -763,6 +783,7 @@ em { font-style: italic; }
 			<li><a href="#plan">The Plan</a></li>
 			<li><a href="#rooftop">The Rooftop</a></li>
 			<li><a href="#land">The Land</a></li>
+			<li><a href="#gallery">Gallery</a></li>
 			<li><a href="#puglia">Mare Nostrum</a></li>
 			<li><a href="#stay">Stay</a></li>
 			<li><a href="#contact">Contact</a></li>
@@ -821,7 +842,7 @@ em { font-style: italic; }
 					<div class="photo" style="background-image:url('images/kitchen.jpg')" role="img" aria-label="Microplaster kitchen island with rattan high-top stools"></div>
 					<figcaption>
 						<h3>Dine</h3>
-						<p>Apulian microplaster and a custom quartz island where breakfast and aperitivi end up &mdash; fully equipped, from induction stove to wine fridge and espresso machine.</p>
+						<p>Apulian microplaster and a custom quartz island where breakfast and aperitivi end up &mdash; fully equipped, from gas stove to wine fridge and espresso machine.</p>
 					</figcaption>
 				</figure>
 				<figure class="room">
@@ -846,10 +867,7 @@ em { font-style: italic; }
 					</figcaption>
 				</figure>
 				<figure class="room">
-					<div class="photo-duo">
-						<div class="photo" style="background-image:url('images/bathtravertinevanity.jpg')" role="img" aria-label="Travertine sink on a plaster vanity below a round mirror"></div>
-						<div class="photo" style="background-image:url('images/bathtravertineshower.jpg')" role="img" aria-label="Walk-in shower washed in daylight from a window over the grove"></div>
-					</div>
+					<div class="photo" style="background-image:url('images/bathtravertineshower.jpg')" role="img" aria-label="Travertine bathroom: stone sink below a round mirror, walk-in shower with a window to the grove"></div>
 					<figcaption>
 						<h3>&hellip; and no two alike</h3>
 						<p>Travertine and warm plaster in one, grey stone and a beaded chandelier in another &mdash; each bath hand-finished with its own character.</p>
@@ -1167,6 +1185,28 @@ em { font-style: italic; }
 						Two cats came with the place: <strong>Octavia</strong>, in her tuxedo, and <strong>Augustus</strong>, the true Emperor of the villa. They were here before us and remain, as far as they are concerned, the rightful owners. They accept guests.
 					</p>
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="gallery" class="section land">
+		<div class="section-inner">
+			<p class="eyebrow">La Galleria &middot; In Photographs</p>
+			<h2>A look around</h2>
+			<div class="gallery-grid">
+				<figure><img src="images/bath-door-to-grove.jpg" alt="Bathroom door open to the olive grove" loading="lazy"><figcaption>The bath that opens to the grove</figcaption></figure>
+				<figure><img src="images/kitchen-oven.jpg" alt="Country oven set into the microplaster kitchen" loading="lazy"><figcaption>The oven, brass and all</figcaption></figure>
+				<figure><img src="images/bedroom-fan.jpg" alt="Bedroom with woven fan headboard" loading="lazy"><figcaption>Under the woven sun</figcaption></figure>
+				<figure><img src="images/bath-grey-vanity.jpg" alt="Grey stone double vanity with beaded chandelier lit" loading="lazy"><figcaption>Evening in the grey bath</figcaption></figure>
+				<figure><img src="images/living-wide.jpg" alt="Living room toward the kitchen island" loading="lazy"><figcaption>The long room</figcaption></figure>
+				<figure><img src="images/kitchen-hob.jpg" alt="Five-burner gas hob with brass knobs" loading="lazy"><figcaption>Five flames, brass knobs</figcaption></figure>
+				<figure><img src="images/primary-wide.jpg" alt="Primary bedroom with canopy bed and green throw" loading="lazy"><figcaption>The primary, morning</figcaption></figure>
+				<figure><img src="images/bath-travertine-lit.jpg" alt="Travertine vanity with backlit mirror" loading="lazy"><figcaption>Travertine at dusk</figcaption></figure>
+				<figure><img src="images/pool-alt.jpg" alt="Poolside loungers under an umbrella, the Adriatic beyond" loading="lazy"><figcaption>Front row seats</figcaption></figure>
+				<figure><img src="images/kitchen-sink.jpg" alt="Brass kitchen sink under the window" loading="lazy"><figcaption>The brass sink</figcaption></figure>
+				<figure><img src="images/bath-detail-tap.jpg" alt="Stone sink, brass tap, olive sprig" loading="lazy"><figcaption>Stone, brass, olive</figcaption></figure>
+				<figure><img src="images/console-art.jpg" alt="Entry console with portrait painting and travertine lamps" loading="lazy"><figcaption>The entry</figcaption></figure>
+				<figure><img src="images/bath-shower-corner.jpg" alt="Plaster shower corner with waffle towel and teak stool" loading="lazy"><figcaption>A quiet corner</figcaption></figure>
 			</div>
 		</div>
 	</section>
